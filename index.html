@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BOOKHUB — Book Summaries, Motivation & Self-Improvement</title>
+<meta name="description" content="BOOKHUB is a curated book discovery platform. Read summaries of the best self-help, psychology, money and motivation books." />
+<meta name="theme-color" content="#ffffff" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="BOOKHUB — Book Summaries & Self-Improvement" />
+<meta property="og:description" content="Discover the best books on motivation, psychology and money — summarized for busy people." />
+<meta property="og:type" content="website" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ═══════════════════════════════════════════
+     CHANGE COLORS HERE (only this block)
+     ═══════════════════════════════════════════ */
+  :root {
+    --brand: #0a0a0a;
+    --accent: #8b6f47;
+    --sale: #b91c1c;
+    --surface: #ffffff;
+    --surface-muted: #f7f6f3;
+    --surface-warm: #f5f1ea;
+    --border: #e8e5de;
+    --ink: #0a0a0a;
+    --ink-muted: #6b6b6b;
+    --ink-soft: #9a9a9a;
+    --gold: #c9a86a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--surface);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  input, textarea { font-family: inherit; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+  /* ═══ ANNOUNCEMENT BAR ═══ */
+  .announcement {
+    background: var(--brand);
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 11px 16px;
+    text-transform: uppercase;
+  }
+
+  /* ═══ HEADER ═══ */
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+
+  .nav-inner {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo-icon {
+    width: 26px;
+    height: 26px;
+    background: var(--brand);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+  }
+
+  .nav-links {
+    display: none;
+    gap: 26px;
+    margin-left: 40px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    color: var(--ink-muted);
+    transition: color 0.2s;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  .nav-right { margin-left: auto; display: flex; gap: 12px; align-items: center; }
+
+  .search-box { display: none; position: relative; }
+
+  .search-box input {
+    height: 40px;
+    width: 220px;
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
+    padding: 0 36px 0 14px;
+    font-size: 14px;
+    outline: none;
+    border-radius: 0;
+  }
+
+  .search-box input:focus { border-color: var(--ink); background: white; }
+
+  .search-box button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px;
+    color: var(--ink-muted);
+  }
+
+  .menu-btn { padding: 8px; display: block; }
+
+  @media (min-width: 900px) {
+    .nav-links { display: flex; }
+    .search-box { display: block; }
+    .menu-btn { display: none; }
+  }
+
+  /* ═══ MOBILE MENU ═══ */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--surface);
+    z-index: 200;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu-header {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .mobile-search {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .mobile-search input {
+    width: 100%;
+    height: 46px;
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
+    padding: 0 14px;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .mobile-menu nav {
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .mobile-menu nav a {
+    padding: 16px 0;
+    font-size: 16px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+  }
+
+  /* ═══ HERO ═══ */
+  .hero { border-bottom: 1px solid var(--border); background: var(--surface); }
+
+  .hero-inner { display: grid; grid-template-columns: 1fr; }
+
+  .hero-content { padding: 56px 20px; }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+  }
+
+  .hero p.lead {
+    margin-top: 22px;
+    color: var(--ink-muted);
+    font-size: 16px;
+    max-width: 500px;
+    line-height: 1.65;
+  }
+
+  .hero-buttons { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 30px;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+
+  .btn-primary { background: var(--brand); color: white; }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-outline { border: 1px solid var(--border); color: var(--ink); background: white; }
+  .btn-outline:hover { border-color: var(--ink); }
+
+  .hero-image {
+    aspect-ratio: 4/5;
+    background: var(--surface-warm);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+  @media (min-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr 1fr; }
+    .hero-content { padding: 96px 60px; }
+    .hero h1 { font-size: 60px; }
+    .hero-image { aspect-ratio: auto; min-height: 580px; }
+  }
+
+  /* ═══ SECTIONS ═══ */
+  section.block { padding: 64px 0; }
+
+  .section-head { margin-bottom: 42px; }
+  .section-head.center { text-align: center; }
+  .section-head.center p { margin-left: auto; margin-right: auto; }
+
+  .section-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-head p {
+    margin-top: 14px;
+    color: var(--ink-muted);
+    max-width: 620px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .section-head .action {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    font-weight: 500;
+  }
+
+  @media (min-width: 900px) {
+    .section-head h2 { font-size: 40px; }
+    section.block { padding: 100px 0; }
+  }
+
+  /* ═══ CATEGORY GRID ═══ */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  @media (min-width: 640px) {
+    .category-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  }
+
+  @media (min-width: 1000px) {
+    .category-grid { grid-template-columns: repeat(6, 1fr); }
+  }
+
+  .category-card {
+    position: relative;
+    aspect-ratio: 3/4;
+    background: var(--surface-warm);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 18px;
+    transition: transform 0.3s;
+    border: 1px solid transparent;
+  }
+
+  .category-card:hover { transform: translateY(-4px); border-color: var(--border); }
+
+  .category-card .cat-emoji {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 28px;
+    opacity: 0.85;
+  }
+
+  .category-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .category-card span {
+    font-size: 11px;
+    color: var(--ink-muted);
+    display: block;
+    margin-top: 4px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ═══ BOOK GRID ═══ */
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 14px;
+  }
+
+  @media (min-width: 640px) {
+    .book-grid { grid-template-columns: repeat(3, 1fr); gap: 30px 22px; }
+  }
+
+  @media (min-width: 1000px) {
+    .book-grid { grid-template-columns: repeat(4, 1fr); gap: 40px 28px; }
+  }
+
+  .book-card { display: flex; flex-direction: column; cursor: pointer; }
+
+  .book-cover {
+    position: relative;
+    aspect-ratio: 2/3;
+    background: var(--surface-warm);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+
+  .book-card:hover .book-cover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  }
+
+  .book-cover img { width: 100%; height: 100%; object-fit: cover; }
+
+  .book-cover .placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--accent);
+    opacity: 0.3;
+  }
+
+  .book-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--brand);
+    color: white;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 4px 9px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .book-badge.gold { background: var(--gold); color: #0a0a0a; }
+
+  .book-info { padding-top: 16px; display: flex; flex-direction: column; flex: 1; }
+
+  .book-category {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .book-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .book-author {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  .book-summary {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--ink-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+  }
+
+  .book-price {
+    margin-top: 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .book-price .current { font-weight: 600; }
+  .book-price .original {
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-decoration: line-through;
+  }
+
+  .book-cta {
+    margin-top: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    background: var(--brand);
+    color: white;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    margin-top: auto;
+    font-weight: 600;
+    gap: 6px;
+  }
+
+  .book-cta:hover { background: var(--accent); }
+
+  .book-cta.disabled {
+    background: var(--surface-muted);
+    color: var(--ink-soft);
+    cursor: not-allowed;
+  }
+
+  /* ═══ FEATURED SECTION (warm background) ═══ */
+  .warm-section {
+    background: var(--surface-warm);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ═══ QUOTE SECTION ═══ */
+  .quote-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: var(--brand);
+    color: white;
+  }
+
+  .quote-section blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    line-height: 1.4;
+    max-width: 780px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  .quote-section cite {
+    display: block;
+    margin-top: 24px;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-style: normal;
+  }
+
+  @media (min-width: 900px) {
+    .quote-section { padding: 120px 20px; }
+    .quote-section blockquote { font-size: 38px; }
+  }
+
+  /* ═══ NEWSLETTER ═══ */
+  .newsletter {
+    background: var(--surface-muted);
+    border-top: 1px solid var(--border);
+    padding: 70px 0;
+    text-align: center;
+  }
+
+  .newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .newsletter p {
+    margin-top: 14px;
+    color: var(--ink-muted);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+  }
+
+  .newsletter form {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 600px) { .newsletter form { flex-direction: row; } }
+
+  .newsletter input {
+    flex: 1;
+    height: 48px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 0 16px;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .newsletter input:focus { border-color: var(--ink); }
+
+  .newsletter button {
+    height: 48px;
+    padding: 0 26px;
+    background: var(--brand);
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .newsletter button:hover { background: var(--accent); }
+
+  /* ═══ FOOTER ═══ */
+  footer { border-top: 1px solid var(--border); margin-top: 0; }
+
+  .footer-grid {
+    padding: 70px 0 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @media (min-width: 700px) {
+    .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+  }
+
+  .footer-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    max-width: 300px;
+    line-height: 1.7;
+  }
+
+  .footer-col h4 {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+  .footer-col a {
+    font-size: 13px;
+    color: var(--ink-muted);
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--ink); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding: 26px 0;
+    font-size: 12px;
+    color: var(--ink-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 700px) {
+    .footer-bottom { flex-direction: row; align-items: center; }
+  }
+
+  /* ═══ PAGE CONTENT (about, privacy) ═══ */
+  .page-content { max-width: 780px; margin: 0 auto; padding: 70px 20px; }
+
+  .page-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  .page-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 36px;
+    margin-bottom: 14px;
+  }
+
+  .page-content p {
+    color: var(--ink-muted);
+    margin-bottom: 18px;
+    line-height: 1.75;
+    font-size: 15px;
+  }
+
+  .page-content a { text-decoration: underline; color: var(--ink); }
+
+  /* ═══ BOOK DETAIL PAGE ═══ */
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 40px 0;
+  }
+
+  @media (min-width: 800px) {
+    .detail-grid { grid-template-columns: 340px 1fr; gap: 60px; padding: 60px 0; }
+  }
+
+  .detail-cover {
+    aspect-ratio: 2/3;
+    background: var(--surface-warm);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .detail-cover img { width: 100%; height: 100%; object-fit: cover; }
+
+  .detail-cover .placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: var(--accent);
+    opacity: 0.3;
+  }
+
+  .detail-info h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  @media (min-width: 800px) { .detail-info h1 { font-size: 46px; } }
+
+  .detail-author {
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--ink-muted);
+    font-style: italic;
+  }
+
+  .detail-meta {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    background: var(--surface-muted);
+    border: 1px solid var(--border);
+    font-weight: 600;
+  }
+
+  .detail-summary {
+    margin-top: 28px;
+    font-size: 16px;
+    color: var(--ink-muted);
+    line-height: 1.75;
+  }
+
+  .detail-full {
+    margin-top: 26px;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.8;
+  }
+
+  .detail-full h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 28px;
+    margin-bottom: 12px;
+  }
+
+  .detail-full ul { margin-left: 20px; margin-top: 10px; }
+  .detail-full li { margin-bottom: 8px; color: var(--ink-muted); }
+
+  .detail-cta-block {
+    margin-top: 34px;
+    padding: 26px;
+    background: var(--surface-muted);
+    border: 1px solid var(--border);
+  }
+
+  .detail-price {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .detail-price .current {
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .detail-price .original {
+    font-size: 15px;
+    color: var(--ink-soft);
+    text-decoration: line-through;
+  }
+
+  .detail-price .save {
+    font-size: 12px;
+    color: var(--sale);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .detail-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 56px;
+    padding: 0 40px;
+    background: var(--brand);
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background 0.2s;
+    width: 100%;
+  }
+
+  .detail-cta:hover { background: var(--accent); }
+
+  .detail-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-bottom: 24px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .back-btn:hover { color: var(--ink); }
+
+  /* ═══ AD SLOT ═══ */
+  .ad-slot {
+    max-width: 970px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px dashed var(--border);
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-muted);
+  }
+
+  /* ═══ PAGE VISIBILITY ═══ */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ═══ FILTER BAR ═══ */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 9px 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--ink-muted);
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .filter-btn.active { background: var(--brand); color: white; border-color: var(--brand); }
+
+  /* ═══ EMPTY STATE ═══ */
+  .empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--ink-muted);
+  }
+
+  .empty-state h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ ANNOUNCEMENT ═══ -->
+<div class="announcement">Free Book Summaries — Motivation · Psychology · Money</div>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="container nav-inner">
+    <button class="menu-btn" onclick="openMenu()" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+
+    <a href="#" onclick="goHome(); return false;" class="logo">
+      <span class="logo-icon">B</span>
+      BOOKHUB
+    </a>
+
+    <nav class="nav-links">
+      <a href="#" onclick="goHome(); return false;">Home</a>
+      <a href="#" onclick="goBooks(''); return false;">All Books</a>
+      <a href="#" onclick="goBooks('Motivation'); return false;">Motivation</a>
+      <a href="#" onclick="goBooks('Psychology'); return false;">Psychology</a>
+      <a href="#" onclick="goBooks('Money'); return false;">Money</a>
+      <a href="#" onclick="goBooks('Self-Help'); return false;">Self-Help</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="search-box">
+        <input type="search" id="searchInputDesktop" placeholder="Search books…" oninput="handleSearch(this.value)" />
+        <button aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="m20 20-3.5-3.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MOBILE MENU ═══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <span class="logo"><span class="logo-icon">B</span> BOOKHUB</span>
+    <button onclick="closeMenu()" aria-label="Close" style="padding:8px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M6 6l12 12M18 6 6 18"/>
+      </svg>
+    </button>
+  </div>
+  <div class="mobile-search">
+    <input type="search" placeholder="Search books…" oninput="handleSearch(this.value)" />
+  </div>
+  <nav>
+    <a href="#" onclick="goHome(); closeMenu(); return false;">Home</a>
+    <a href="#" onclick="goBooks(''); closeMenu(); return false;">All Books</a>
+    <a href="#" onclick="goBooks('Motivation'); closeMenu(); return false;">Motivation</a>
+    <a href="#" onclick="goBooks('Psychology'); closeMenu(); return false;">Psychology</a>
+    <a href="#" onclick="goBooks('Money'); closeMenu(); return false;">Money</a>
+    <a href="#" onclick="goBooks('Self-Help'); closeMenu(); return false;">Self-Help</a>
+    <a href="#" onclick="goBooks('Productivity'); closeMenu(); return false;">Productivity</a>
+    <a href="#" onclick="showPage('about'); closeMenu(); return false;">About</a>
+    <a href="#" onclick="showPage('contact'); closeMenu(); return false;">Contact</a>
+  </nav>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HOME PAGE
+     ═══════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="eyebrow">Curated Book Discovery</p>
+        <h1>Books That Change The Way You Think</h1>
+        <p class="lead">Handpicked summaries from the world's best books on motivation, psychology, money and personal growth — for busy people who want to grow.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary" onclick="goBooks(''); return false;">Explore Books</a>
+          <a href="#" class="btn btn-outline" onclick="scrollToSection('featured'); return false;">Featured Picks</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=1200&q=80" alt="Stack of books on a table" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="block">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Browse By Theme</p>
+        <h2>Categories</h2>
+        <p>Every category is curated with books that have stood the test of time.</p>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <!-- AD SLOT 1 -->
+  <div class="container">
+    <div class="ad-slot">Advertisement</div>
+  </div>
+
+  <!-- FEATURED BOOKS -->
+  <section class="block" id="featured">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Handpicked</p>
+        <h2>Featured Books</h2>
+        <p>Our current top picks across motivation, psychology and money.</p>
+        <a href="#" class="action" onclick="goBooks(''); return false;">View all books →</a>
+      </div>
+      <div class="book-grid" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <blockquote>
+      "The more that you read, the more things you will know. The more that you learn, the more places you'll go."
+    </blockquote>
+    <cite>— Dr. Seuss</cite>
+  </section>
+
+  <!-- NEW ARRIVALS (warm bg) -->
+  <section class="block warm-section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Fresh Picks</p>
+        <h2>New Arrivals</h2>
+        <p>The latest books added to the collection.</p>
+      </div>
+      <div class="book-grid" id="newGrid"></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Weekly Book Digest</h2>
+      <p>Get one handpicked book summary every week in your inbox. No spam, ever.</p>
+      <form onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="you@example.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="newsletterMsg" style="display:none; margin-top:14px; font-size:13px; color: var(--ink-muted);"></p>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     BOOKS PAGE
+     ═══════════════════════════════════════════ -->
+<div class="page" id="page-books">
+  <div class="container" style="padding: 50px 20px 80px;">
+    <div class="section-head">
+      <p class="eyebrow">Catalogue</p>
+      <h2 id="booksTitle">All Books</h2>
+      <p id="booksSubtitle">Every book is summarized for busy readers. Links go to the retailer.</p>
+    </div>
+
+    <div class="filter-bar" id="filterBar"></div>
+
+    <div class="book-grid" id="booksGrid"></div>
+
+    <div id="booksEmpty" style="display:none;">
+      <div class="empty-state">
+        <h3>No books found</h3>
+        <p>Try a different category or search term.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     BOOK DETAIL PAGE
+     ═══════════════════════════════════════════ -->
+<div class="page" id="page-detail">
+  <div class="container">
+    <span class="back-btn" onclick="goBooks('');">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+      Back to books
+    </span>
+    <div class="detail-grid" id="detailGrid"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+     ═══════════════════════════════════════════ -->
+<div class="page" id="page-about">
+  <div class="page-content">
+    <h1>About BOOKHUB</h1>
+    <p>BOOKHUB is an independent book discovery platform. We research and summarize books on motivation, psychology, money, productivity and personal growth — so busy readers can decide what to read next.</p>
+    <p>We do not sell books ourselves. We do not process payments and we do not ship orders. When you click a "Buy on Amazon" button, you are redirected to Amazon (or another retailer) to complete your purchase directly with them.</p>
+    <p>Some links on this site are affiliate links. If you make a qualifying purchase through one of those links, we may earn a commission at no extra cost to you. This supports the site. See our <a href="#" onclick="showPage('affiliate-disclosure'); return false;">affiliate disclosure</a>.</p>
+    <p>Book summaries are written in our own words and are intended as a discovery aid. We encourage you to purchase the full book to get the complete value.</p>
+    <p>If you have any questions or corrections, please <a href="#" onclick="showPage('contact'); return false;">get in touch</a>.</p>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<div class="page" id="page-contact">
+  <div class="page-content">
+    <h1>Contact</h1>
+    <p>For questions, corrections or partnership enquiries, email us at:</p>
+    <p><a href="mailto:hello@bookhub.example">hello@bookhub.example</a></p>
+    <p>We aim to respond within a few business days. Please include the book title if your message is about a specific book.</p>
+  </div>
+</div>
+
+<!-- ═══ PRIVACY ═══ -->
+<div class="page" id="page-privacy-policy">
+  <div class="page-content">
+    <h1>Privacy Policy</h1>
+    <p>This policy explains how BOOKHUB handles information.</p>
+    <h2>Information we collect</h2>
+    <p>We do not require accounts. We do not collect payment information. When you click an outbound affiliate link, the destination retailer may collect data under their own privacy policy.</p>
+    <h2>Analytics</h2>
+    <p>When analytics is enabled, we record anonymous events such as page views, search queries and outbound clicks. This is used to understand which content is useful. No personal information is required.</p>
+    <h2>Cookies</h2>
+    <p>Third-party services we may use (analytics, advertising, affiliate networks) may set cookies. You can block cookies in your browser settings.</p>
+    <h2>Contact</h2>
+    <p>Questions? Email <a href="mailto:hello@bookhub.example">hello@bookhub.example</a>.</p>
+  </div>
+</div>
+
+<!-- ═══ TERMS ═══ -->
+<div class="page" id="page-terms">
+  <div class="page-content">
+    <h1>Terms & Conditions</h1>
+    <p>By using BOOKHUB you agree to these terms. If you do not agree, please do not use the site.</p>
+    <h2>Nature of the service</h2>
+    <p>BOOKHUB is a book discovery platform. We do not sell books, process payments, ship orders or manage returns. All transactions take place on the retailer's website.</p>
+    <h2>Content</h2>
+    <p>Summaries and descriptions are original, created for discovery purposes. They are not a substitute for reading the full book. Book titles, covers and author names are the property of their respective owners.</p>
+    <h2>Affiliate links</h2>
+    <p>Some links on this site are affiliate links. See our <a href="#" onclick="showPage('affiliate-disclosure'); return false;">affiliate disclosure</a>.</p>
+    <h2>Liability</h2>
+    <p>We provide this site "as is". We are not responsible for the products, services, content or conduct of retailers linked from this site.</p>
+  </div>
+</div>
+
+<!-- ═══ AFFILIATE DISCLOSURE ═══ -->
+<div class="page" id="page-affiliate-disclosure">
+  <div class="page-content">
+    <h1>Affiliate Disclosure</h1>
+    <p>BOOKHUB participates in affiliate programmes. This means that some of the links you see on this site are affiliate links.</p>
+    <p>If you click an affiliate link and make a qualifying purchase, the retailer may pay us a commission. This comes at no additional cost to you.</p>
+    <p>We do not sell books ourselves and we do not process payments. All purchases are completed on the retailer's website under their terms and policies.</p>
+    <p>Our editorial decisions are independent. We only feature books we have decided are worth sharing. Affiliate relationships do not determine which books appear on the site.</p>
+    <p>If you have any questions about how affiliate links work here, please <a href="#" onclick="showPage('contact'); return false;">contact us</a>.</p>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">BOOKHUB</div>
+        <p class="footer-desc">A curated book discovery platform. Summaries and inspiration for busy readers who want to grow.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Browse</h4>
+        <ul>
+          <li><a href="#" onclick="goBooks(''); return false;">All Books</a></li>
+          <li><a href="#" onclick="goBooks('Motivation'); return false;">Motivation</a></li>
+          <li><a href="#" onclick="goBooks('Psychology'); return false;">Psychology</a></li>
+          <li><a href="#" onclick="goBooks('Money'); return false;">Money</a></li>
+          <li><a href="#" onclick="goBooks('Self-Help'); return false;">Self-Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('about'); return false;">About</a></li>
+          <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+          <li><a href="#" onclick="showPage('affiliate-disclosure'); return false;">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('privacy-policy'); return false;">Privacy Policy</a></li>
+          <li><a href="#" onclick="showPage('terms'); return false;">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> BOOKHUB. All rights reserved.</p>
+      <p>BOOKHUB is a discovery platform. We do not process payments. See our <a href="#" onclick="showPage('affiliate-disclosure'); return false;" style="text-decoration: underline;">affiliate disclosure</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   ▓▓▓ BOOK DATA — YAHAN BOOKS ADD KARO ▓▓▓
+   ═══════════════════════════════════════════════════════════════
+
+   NAYI BOOK ADD KARNE KE LIYE:
+   1. Neeche wala ek block copy karo (curly braces { } ke saath)
+   2. Comma laga ke is list ke aakhir mein paste karo
+   3. Har field ko bharo
+   4. Save karo — website update ho jayegi
+
+   HAR BOOK MEIN YE FIELDS HAIN:
+
+   id           → unique number/naam (jaise "1", "2", "atomic-habits")
+   title        → book ka naam
+   author       → author ka naam
+   category     → "Motivation", "Psychology", "Money", "Self-Help", "Productivity"
+   summary      → 1-2 line ka short summary (card pe dikhta hai)
+   description  → poora summary (detail page pe)
+   keyPoints    → list of 3-5 key points (array)
+   cover        → image URL ya /images/books/xxx.jpg
+   price        → current price (jaise "$12.99")
+   originalPrice→ original price (agar discount hai to)
+   currency     → "$" ya "Rs" ya "₹"
+   affiliateUrl → AMAZON AFFILIATE LINK YAHAN DAALO
+   featured     → true karo agar home page pe dikhana hai
+   tags         → keywords (array)
+   ═══════════════════════════════════════════════════════════════ */
+
+const BOOKS = [
+  {
+    id: "1",
+    title: "Atomic Habits",
+    author: "James Clear",
+    category: "Self-Help",
+    summary: "Small changes, remarkable results. The definitive guide to building good habits and breaking bad ones.",
+    description: "Atomic Habits is a practical guide to habit formation. James Clear explains why tiny 1% improvements compound into remarkable results over time, and provides a framework for making good habits obvious, attractive, easy and satisfying.",
+    keyPoints: [
+      "Small habits compound into remarkable results over time",
+      "Focus on systems, not goals",
+      "Make good habits obvious, attractive, easy, and satisfying",
+      "Identity-based habits are more lasting than outcome-based ones"
+    ],
+    cover: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80",
+    price: "$14.99",
+    originalPrice: "$27.00",
+    currency: "$",
+    affiliateUrl: "https://www.amazon.com/dp/0735211299",
+    featured: true,
+    tags: ["habits", "productivity", "self-help"]
+  },
+  {
+    id: "2",
+    title: "The Psychology of Money",
+    author: "Morgan Housel",
+    category: "Money",
+    summary: "Timeless lessons on wealth, greed and happiness — 19 short stories exploring how we think about money.",
+    description: "Morgan Housel explores how our personal history, emotions and biases shape the way we handle money. Through 19 short stories, he shows that doing well with money has little to do with how smart you are, and a lot to do with how you behave.",
+    keyPoints: [
+      "Wealth is what you don't see — it's money not spent",
+      "Compounding is the most powerful force in finance",
+      "Knowing what is enough prevents financial ruin",
+      "Emotional control beats technical skill"
+    ],
+    cover: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
+    price: "$13.50",
+    currency: "$",
+    affiliateUrl: "https://www.amazon.com/dp/0857197681",
+    featured: true,
+    tags: ["money", "finance", "investing"]
+  },
+  {
+    id: "3",
+    title: "Thinking, Fast and Slow",
+    author: "Daniel Kahneman",
+    category: "Psychology",
+    summary: "A Nobel laureate reveals the two systems that drive the way we think — and how they shape our decisions.",
+    description: "Daniel Kahneman, winner of the Nobel Prize in Economics, explores the two systems that drive the way we think: System 1 (fast, intuitive, emotional) and System 2 (slow, deliberative, logical). Understanding both helps us make better decisions.",
+    keyPoints: [
+      "Two systems drive thinking: fast intuitive and slow logical",
+      "We are overconfident in our judgments",
+      "Losses hurt more than equivalent gains feel good",
+      "Framing effects shape our decisions"
+    ],
+    cover: "https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=600&q=80",
+    price: "$16.99",
+    originalPrice: "$22.00",
+    currency: "$",
+    affiliateUrl: "https://www.amazon.com/dp/0374533555",
+    featured: true,
+    tags: ["psychology", "decision-making", "behavioral-economics"]
+  },
+  {
+    id: "4",
+    title: "Rich Dad Poor Dad",
+    author: "Robert T. Kiyosaki",
+    category: "Money",
+    summary: "What the rich teach their kids about money that the poor and middle class do not.",
+    description: "Robert Kiyosaki shares the lessons he learned from two fathers: his biological father (Poor Dad) and the father of his best friend (Rich Dad). The book contrasts two mindsets about money and challenges traditional beliefs about income, saving and investing.",
+    keyPoints: [
+      "The rich buy assets; the poor and middle class buy liabilities",
+      "Financial literacy is more important than a high salary",
+      "Your house is often a liability, not an asset",
+      "Mind your own business — build your asset column"
+    ],
+    cover: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80",
+    price: "$11.99",
+    currency: "$",
+    affiliateUrl: "https://www.amazon.com/dp/1612680194",
+    featured: true,
+    tags: ["money", "investing", "wealth"]
+  },
+  {
+    id: "5",
+    title: "Deep Work",
+    author: "Cal Newport",
+    category: "Productivity",
+    summary: "Rules for focused success in a distracted world — how to cultivate the ability to concentrate without distraction.",
+    description: "Cal Newport argues that the ability to focus without distraction on cognitively demanding tasks is becoming increasingly rare — and increasingly valuable. He provides practical rules for cultivating deep work in a world full of distraction.",
+    keyPoints: [
+      "Deep work is becoming rare and valuable",
+      "Shallow work consumes most of our days",
+      "Schedule deep work sessions ritualistically",
+      "Embrace boredom to strengthen focus"
+    ],
+    cover: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&q=80",
+    price: "$15.99",
+    currency: "$",
+    affiliateUrl: "https://www.amazon.com/dp/1455586692",
+    featured: true,
+    tags: ["productivity", "focus", "work"]
+  },
+  {
+    id: "6",
+    title: "The 7 Habits of Highly Effective People",
+    author: "Stephen R. Covey",
+    category: "Self-Help",
+    summary: "A principle-centered approach to solving personal and professional problems.",
+    description: "Stephen Covey presents seven habits that move a person from dependence to independence to interdependence. The book is grounded in universal, timeless principles of character and effectiveness.",
+    keyPoints: [
+      "Be proactive — take responsibility for your life",
+      "Begin with the end in mind",
+      "Put first things first",
+      "Seek first to understand, then to be understood"
+    ],
+    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&q=80",
+    price: "$14.99",
+    originalPrice: "$19.99",
+    currency: "$",
+    affiliateUrl: "https://www.amazon.com/dp/1982137274",
+    featured: false,
+    tags: ["self-help", "habits", "effectiveness"]
+  },
+  {
+    id: "7",
+    title: "Man's Search for Meaning",
+    author: "Viktor E. Frankl",
+    category: "Psychology",
+    summary: "A psychiatrist's memoir of survival in Nazi concentration camps and his theory of finding meaning in life.",
+    description: "Viktor Frankl, a psychiatrist and Holocaust survivor, shares his experiences in concentration camps and argues that our primary drive is not pleasure but the pursuit of meaning. The book has inspired millions to find purpose in suffering.",
+    keyPoints: [
+      "Meaning is the primary motivator in human life",
+      "We can choose our attitude in any circumstance",
+      "Suffering ceases to be suffering when it finds meaning",
+      "Love is the ultimate and highest goal"
+    ],
+    cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&q=80",
+    price: "$12.99",
+    currency: "$",
+    affiliateUrl: "https://www.amazon.com/dp/080701429X",
+    featured: false,
+    tags: ["psychology", "meaning", "philosophy"]
+  },
+  {
+    id: "8",
+    title: "Can't Hurt Me",
+    author: "David Goggins",
+    category: "Motivation",
+    summary: "Master your mind and defy the odds — a story of transformation through discipline and suffering.",
+    description: "David Goggins shares his journey from a troubled childhood to becoming a Navy SEAL, endurance athlete and one of the world's toughest men. The book is a raw, powerful testament to what discipline and mental toughness can achieve.",
+    keyPoints: [
+      "Discipline over motivation — do the work regardless of feelings",
+      "Callous your mind by facing discomfort daily",
+      "The accountability mirror reveals your truth",
+      "You are capable of 40% more than you think"
+    ],
+    cover: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80",
+    price: "$13.99",
+    originalPrice: "$21.99",
+    currency: "$",
+    affiliateUrl: "https://www.amazon.com/dp/1544512287",
+    featured: false,
+    tags: ["motivation", "discipline", "mental-toughness"]
+  },
+  {
+    id: "9",
+    title: "The Alchemist",
+    author: "Paulo Coelho",
+    category: "Motivation",
+    summary: "A fable about following your dreams — a shepherd's journey to find treasure and his personal legend.",
+    description: "The Alchemist follows Santiago, an Andalusian shepherd boy, on a journey to find treasure. Along the way he learns to listen to his heart, follow omens and pursue his Personal Legend. It's a story about dreams, destiny and the wisdom of the soul.",
+    keyPoints: [
+      "Follow your Personal Legend — your true destiny",
+      "Fear of suffering is worse than suffering itself",
+      "When you want something, the universe conspires to help",
+      "Treasure lies where your heart is"
+    ],
+    cover: "https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=600&q=80",
+    price: "$10.99",
+    currency: "$",
+    affiliateUrl: "https://www.amazon.com/dp/0062315005",
+    featured: false,
+    tags: ["motivation", "inspiration", "fiction"]
+  },
+  {
+    id: "10",
+    title: "Zero to One",
+    author: "Peter Thiel",
+    category: "Money",
+    summary: "Notes on startups, or how to build the future — creating something entirely new rather than copying.",
+    description: "Peter Thiel argues that true progress comes from going from 0 to 1 — creating something entirely new — rather than from 1 to n (copying). He shares insights on startups, monopolies, and building a better future.",
+    keyPoints: [
+      "Competition is for losers — build a monopoly instead",
+      "Go from 0 to 1 — create something new",
+      "Start small and monopolize",
+      "The best startups answer an important secret"
+    ],
+    cover: "https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?w=600&q=80",
+    price: "$14.99",
+    currency: "$",
+    affiliateUrl: "https://www.amazon.com/dp/0804139296",
+    featured: false,
+    tags: ["money", "startups", "business"]
+  }
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   ▓▓▓ END OF BOOK DATA ▓▓▓
+   ═══════════════════════════════════════════════════════════════ */
+
+// ═══ CONFIG — YAHAN APNA BRAND/EMAIL BADALO ═══
+const CONFIG = {
+  brand: "BOOKHUB",
+  email: "hello@bookhub.example",
+  currencySymbol: "$"
+};
+
+// ═══ HELPERS ═══
+function esc(str) {
+  return String(str || '').replace(/[&<>"']/g, m => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[m]));
+}
+
+function placeholderLetter(title) {
+  return (title || 'B').trim().charAt(0).toUpperCase();
+}
+
+// ═══ PAGE NAVIGATION ═══
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById('page-' + name);
+  if (el) el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goHome() {
+  showPage('home');
+  renderAll();
+}
+
+function goBooks(category) {
+  showPage('books');
+  currentCategory = category || '';
+  renderBooksPage();
+}
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ═══ MOBILE MENU ═══
+function openMenu() {
+  document.getElementById('mobileMenu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ═══ RENDER CATEGORIES ═══
+const CATEGORIES = [
+  { name: "Motivation", emoji: "🔥", desc: "Fuel to keep going" },
+  { name: "Psychology", emoji: "🧠", desc: "Understand the mind" },
+  { name: "Money", emoji: "💰", desc: "Build real wealth" },
+  { name: "Self-Help", emoji: "🌱", desc: "Become your best" },
+  { name: "Productivity", emoji: "⚡", desc: "Do more, focus better" },
+  { name: "All Books", emoji: "📚", desc: "See everything", filter: "" }
+];
+
+function renderCategories() {
+  const grid = document.getElementById('categoryGrid');
+  grid.innerHTML = CATEGORIES.map(c => `
+    <div class="category-card" onclick="goBooks('${c.filter !== undefined ? c.filter : c.name}')" style="cursor:pointer;">
+      <span class="cat-emoji">${c.emoji}</span>
+      <div>
+        <h3>${esc(c.name)}</h3>
+        <span>${esc(c.desc)}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ═══ RENDER BOOK CARD ═══
+function bookCard(book) {
+  const hasCover = book.cover && book.cover.trim() !== '';
+  const hasDiscount = book.originalPrice && book.originalPrice.trim() !== '';
+  const hasLink = book.affiliateUrl && !book.affiliateUrl.includes('YOUR_AFFILIATE');
+
+  const coverHTML = hasCover
+    ? `<img src="${esc(book.cover)}" alt="${esc(book.title)} book cover" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+       <div class="placeholder" style="display:none;">${placeholderLetter(book.title)}</div>`
+    : `<div class="placeholder">${placeholderLetter(book.title)}</div>`;
+
+  const cta = hasLink
+    ? `<a class="book-cta" href="${esc(book.affiliateUrl)}" target="_blank" rel="nofollow sponsored noopener noreferrer" onclick="event.stopPropagation(); trackClick('${esc(book.id)}','${esc(book.title)}');">
+         Buy on Amazon
+         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M8 7h9v9"/></svg>
+       </a>`
+    : `<span class="book-cta disabled">Link coming soon</span>`;
+
+  return `
+    <article class="book-card" onclick="openBook('${esc(book.id)}')">
+      <div class="book-cover">
+        ${coverHTML}
+        ${book.featured ? '<span class="book-badge gold">Featured</span>' : ''}
+      </div>
+      <div class="book-info">
+        <div class="book-category">${esc(book.category || '')}</div>
+        <h3>${esc(book.title)}</h3>
+        <div class="book-author">by ${esc(book.author || 'Unknown')}</div>
+        <p class="book-summary">${esc(book.summary || '')}</p>
+        <div class="book-price">
+          <span class="current">${esc(book.price || '')}</span>
+          ${hasDiscount ? `<span class="original">${esc(book.originalPrice)}</span>` : ''}
+        </div>
+        ${cta}
+      </div>
+    </article>
+  `;
+}
+
+// ═══ RENDER HOME ═══
+function renderAll() {
+  const featured = BOOKS.filter(b => b.featured).slice(0, 8);
+  const featuredOrAll = featured.length ? featured : BOOKS.slice(0, 8);
+
+  document.getElementById('featuredGrid').innerHTML =
+    featuredOrAll.map(bookCard).join('');
+
+  const newest = [...BOOKS].reverse().slice(0, 4);
+  document.getElementById('newGrid').innerHTML =
+    newest.map(bookCard).join('');
+}
+
+// ═══ RENDER BOOKS PAGE ═══
+let currentCategory = '';
+let currentSearch = '';
+
+function renderBooksPage() {
+  const titleEl = document.getElementById('booksTitle');
+  const subtitleEl = document.getElementById('booksSubtitle');
+
+  let list = [...BOOKS];
+  if (currentCategory) {
+    list = list.filter(b => (b.category || '').toLowerCase() === currentCategory.toLowerCase());
+    titleEl.textContent = currentCategory;
+    subtitleEl.textContent = `${list.length} book${list.length === 1 ? '' : 's'} in this category.`;
+  } else {
+    titleEl.textContent = 'All Books';
+    subtitleEl.textContent = `${list.length} book${list.length === 1 ? '' : 's'} in the collection.`;
+  }
+
+  if (currentSearch) {
+    const q = currentSearch.toLowerCase();
+    list = list.filter(b => (
+      (b.title || '').toLowerCase().includes(q) ||
+      (b.author || '').toLowerCase().includes(q) ||
+      (b.summary || '').toLowerCase().includes(q) ||
+      (b.category || '').toLowerCase().includes(q) ||
+      (b.tags || []).join(' ').toLowerCase().includes(q)
+    ));
+    titleEl.textContent = `Search: "${currentSearch}"`;
+    subtitleEl.textContent = `${list.length} result${list.length === 1 ? '' : 's'} found.`;
+  }
+
+  // Filter bar
+  const filterBar = document.getElementById('filterBar');
+  const cats = ['', 'Motivation', 'Psychology', 'Money', 'Self-Help', 'Productivity'];
+  filterBar.innerHTML = cats.map(c => `
+    <button class="filter-btn ${currentCategory === c ? 'active' : ''}"
+      onclick="setCategory('${c}')">
+      ${c || 'All'}
+    </button>
+  `).join('');
+
+  const grid = document.getElementById('booksGrid');
+  const empty = document.getElementById('booksEmpty');
+
+  if (list.length === 0) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+  } else {
+    empty.style.display = 'none';
+    grid.innerHTML = list.map(bookCard).join('');
+  }
+}
+
+function setCategory(cat) {
+  currentCategory = cat;
+  currentSearch = '';
+  renderBooksPage();
+}
+
+// ═══ BOOK DETAIL ═══
+function openBook(id) {
+  const book = BOOKS.find(b => b.id === id);
+  if (!book) return;
+
+  const grid = document.getElementById('detailGrid');
+  const hasCover = book.cover && book.cover.trim() !== '';
+  const hasDiscount = book.originalPrice && book.originalPrice.trim() !== '';
+  const hasLink = book.affiliateUrl && !book.affiliateUrl.includes('YOUR_AFFILIATE');
+
+  const coverHTML = hasCover
+    ? `<img src="${esc(book.cover)}" alt="${esc(book.title)} book cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+       <div class="placeholder" style="display:none;">${placeholderLetter(book.title)}</div>`
+    : `<div class="placeholder">${placeholderLetter(book.title)}</div>`;
+
+  const keyPointsHTML = (book.keyPoints || []).length
+    ? `<h3>Key Takeaways</h3>
+       <ul>${book.keyPoints.map(p => `<li>${esc(p)}</li>`).join('')}</ul>`
+    : '';
+
+  const ctaHTML = hasLink
+    ? `<a class="detail-cta" href="${esc(book.affiliateUrl)}" target="_blank" rel="nofollow sponsored noopener noreferrer" onclick="trackClick('${esc(book.id)}','${esc(book.title)}');">
+         Buy on Amazon
+         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7M8 7h9v9"/></svg>
+       </a>`
+    : `<span class="detail-cta" style="background: var(--surface-muted); color: var(--ink-soft); cursor: not-allowed;">Link coming soon</span>`;
+
+  const tagsHTML = (book.tags || []).length
+    ? book.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')
+    : '';
+
+  grid.innerHTML = `
+    <div class="detail-cover">${coverHTML}</div>
+    <div class="detail-info">
+      <span class="book-category">${esc(book.category || '')}</span>
+      <h1>${esc(book.title)}</h1>
+      <p class="detail-author">by ${esc(book.author || 'Unknown')}</p>
+      <div class="detail-meta">${tagsHTML}</div>
+      <p class="detail-summary">${esc(book.description || book.summary || '')}</p>
+      <div class="detail-full">
+        ${keyPointsHTML}
+      </div>
+      <div class="detail-cta-block">
+        <div class="detail-price">
+          <span class="current">${esc(book.price || '')}</span>
+          ${hasDiscount ? `<span class="original">${esc(book.originalPrice)}</span><span class="save">Save</span>` : ''}
+        </div>
+        ${ctaHTML}
+        <p class="detail-note">You will be redirected to Amazon. BOOKHUB may earn a commission on qualifying purchases — at no extra cost to you. See our <a href="#" onclick="showPage('affiliate-disclosure'); return false;" style="text-decoration: underline;">affiliate disclosure</a>.</p>
+      </div>
+    </div>
+  `;
+
+  showPage('detail');
+}
+
+// ═══ SEARCH ═══
+function handleSearch(q) {
+  currentSearch = (q || '').trim();
+  if (currentSearch.length < 2) return;
+  showPage('books');
+  currentCategory = '';
+  renderBooksPage();
+}
+
+// ═══ NEWSLETTER ═══
+function handleNewsletter(e) {
+  e.preventDefault();
+  const msg = document.getElementById('newsletterMsg');
+  msg.textContent = 'Thank you! Newsletter signup is not yet active — no data has been stored.';
+  msg.style.display = 'block';
+  e.target.reset();
+}
+
+// ═══ ANALYTICS (silent for now, ready for AdSense) ═══
+function trackClick(bookId, bookTitle) {
+  // When you add Google Analytics later, this event will fire automatically.
+  if (typeof gtag === 'function') {
+    gtag('event', 'affiliate_click', { book_id: bookId, book_title: bookTitle });
+  }
+  console.log('[BOOKHUB] Affiliate click:', bookId, bookTitle);
+}
+
+// ═══ INIT ═══
+document.getElementById('year').textContent = new Date().getFullYear();
+renderCategories();
+renderAll();
+
+// Close mobile menu on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMenu();
+});
+</script>
+</body>
+</html>
