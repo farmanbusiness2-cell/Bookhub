@@ -1255,209 +1255,112 @@
 
 const BOOKS = [
   {
-    id: "1",
-    title: "Atomic Habits",
-    author: "James Clear",
-    category: "Self-Help",
-    summary: "Small changes, remarkable results. The definitive guide to building good habits and breaking bad ones.",
-    description: "Atomic Habits is a practical guide to habit formation. James Clear explains why tiny 1% improvements compound into remarkable results over time, and provides a framework for making good habits obvious, attractive, easy and satisfying.",
-    keyPoints: [
-      "Small habits compound into remarkable results over time",
-      "Focus on systems, not goals",
-      "Make good habits obvious, attractive, easy, and satisfying",
-      "Identity-based habits are more lasting than outcome-based ones"
-    ],
-    cover: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80",
-    price: "$14.99",
-    originalPrice: "$27.00",
-    currency: "$",
-    affiliateUrl: "https://www.amazon.com/dp/0735211299",
-    featured: true,
-    tags: ["habits", "productivity", "self-help"]
-  },
-  {
-    id: "2",
-    title: "The Psychology of Money",
-    author: "Morgan Housel",
-    category: "Money",
-    summary: "Timeless lessons on wealth, greed and happiness — 19 short stories exploring how we think about money.",
-    description: "Morgan Housel explores how our personal history, emotions and biases shape the way we handle money. Through 19 short stories, he shows that doing well with money has little to do with how smart you are, and a lot to do with how you behave.",
-    keyPoints: [
-      "Wealth is what you don't see — it's money not spent",
-      "Compounding is the most powerful force in finance",
-      "Knowing what is enough prevents financial ruin",
-      "Emotional control beats technical skill"
-    ],
-    cover: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
-    price: "$13.50",
-    currency: "$",
-    affiliateUrl: "https://www.amazon.com/dp/0857197681",
-    featured: true,
-    tags: ["money", "finance", "investing"]
-  },
-  {
-    id: "3",
-    title: "Thinking, Fast and Slow",
-    author: "Daniel Kahneman",
-    category: "Psychology",
-    summary: "A Nobel laureate reveals the two systems that drive the way we think — and how they shape our decisions.",
-    description: "Daniel Kahneman, winner of the Nobel Prize in Economics, explores the two systems that drive the way we think: System 1 (fast, intuitive, emotional) and System 2 (slow, deliberative, logical). Understanding both helps us make better decisions.",
-    keyPoints: [
-      "Two systems drive thinking: fast intuitive and slow logical",
-      "We are overconfident in our judgments",
-      "Losses hurt more than equivalent gains feel good",
-      "Framing effects shape our decisions"
-    ],
-    cover: "https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=600&q=80",
-    price: "$16.99",
-    originalPrice: "$22.00",
-    currency: "$",
-    affiliateUrl: "https://www.amazon.com/dp/0374533555",
-    featured: true,
-    tags: ["psychology", "decision-making", "behavioral-economics"]
-  },
-  {
-    id: "4",
-    title: "Rich Dad Poor Dad",
-    author: "Robert T. Kiyosaki",
-    category: "Money",
-    summary: "What the rich teach their kids about money that the poor and middle class do not.",
-    description: "Robert Kiyosaki shares the lessons he learned from two fathers: his biological father (Poor Dad) and the father of his best friend (Rich Dad). The book contrasts two mindsets about money and challenges traditional beliefs about income, saving and investing.",
-    keyPoints: [
-      "The rich buy assets; the poor and middle class buy liabilities",
-      "Financial literacy is more important than a high salary",
-      "Your house is often a liability, not an asset",
-      "Mind your own business — build your asset column"
-    ],
-    cover: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80",
-    price: "$11.99",
-    currency: "$",
-    affiliateUrl: "https://www.amazon.com/dp/1612680194",
-    featured: true,
-    tags: ["money", "investing", "wealth"]
-  },
-  {
-    id: "5",
-    title: "Deep Work",
-    author: "Cal Newport",
-    category: "Productivity",
-    summary: "Rules for focused success in a distracted world — how to cultivate the ability to concentrate without distraction.",
-    description: "Cal Newport argues that the ability to focus without distraction on cognitively demanding tasks is becoming increasingly rare — and increasingly valuable. He provides practical rules for cultivating deep work in a world full of distraction.",
-    keyPoints: [
-      "Deep work is becoming rare and valuable",
-      "Shallow work consumes most of our days",
-      "Schedule deep work sessions ritualistically",
-      "Embrace boredom to strengthen focus"
-    ],
-    cover: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&q=80",
-    price: "$15.99",
-    currency: "$",
-    affiliateUrl: "https://www.amazon.com/dp/1455586692",
-    featured: true,
-    tags: ["productivity", "focus", "work"]
-  },
-  {
-    id: "6",
-    title: "The 7 Habits of Highly Effective People",
-    author: "Stephen R. Covey",
-    category: "Self-Help",
-    summary: "A principle-centered approach to solving personal and professional problems.",
-    description: "Stephen Covey presents seven habits that move a person from dependence to independence to interdependence. The book is grounded in universal, timeless principles of character and effectiveness.",
-    keyPoints: [
-      "Be proactive — take responsibility for your life",
-      "Begin with the end in mind",
-      "Put first things first",
-      "Seek first to understand, then to be understood"
-    ],
-    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&q=80",
-    price: "$14.99",
-    originalPrice: "$19.99",
-    currency: "$",
-    affiliateUrl: "https://www.amazon.com/dp/1982137274",
-    featured: false,
-    tags: ["self-help", "habits", "effectiveness"]
-  },
-  {
-    id: "7",
-    title: "Man's Search for Meaning",
-    author: "Viktor E. Frankl",
-    category: "Psychology",
-    summary: "A psychiatrist's memoir of survival in Nazi concentration camps and his theory of finding meaning in life.",
-    description: "Viktor Frankl, a psychiatrist and Holocaust survivor, shares his experiences in concentration camps and argues that our primary drive is not pleasure but the pursuit of meaning. The book has inspired millions to find purpose in suffering.",
-    keyPoints: [
-      "Meaning is the primary motivator in human life",
-      "We can choose our attitude in any circumstance",
-      "Suffering ceases to be suffering when it finds meaning",
-      "Love is the ultimate and highest goal"
-    ],
-    cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&q=80",
-    price: "$12.99",
-    currency: "$",
-    affiliateUrl: "https://www.amazon.com/dp/080701429X",
-    featured: false,
-    tags: ["psychology", "meaning", "philosophy"]
-  },
-  {
-    id: "8",
-    title: "Can't Hurt Me",
-    author: "David Goggins",
-    category: "Motivation",
-    summary: "Master your mind and defy the odds — a story of transformation through discipline and suffering.",
-    description: "David Goggins shares his journey from a troubled childhood to becoming a Navy SEAL, endurance athlete and one of the world's toughest men. The book is a raw, powerful testament to what discipline and mental toughness can achieve.",
-    keyPoints: [
-      "Discipline over motivation — do the work regardless of feelings",
-      "Callous your mind by facing discomfort daily",
-      "The accountability mirror reveals your truth",
-      "You are capable of 40% more than you think"
-    ],
-    cover: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80",
-    price: "$13.99",
-    originalPrice: "$21.99",
-    currency: "$",
-    affiliateUrl: "https://www.amazon.com/dp/1544512287",
-    featured: false,
-    tags: ["motivation", "discipline", "mental-toughness"]
-  },
-  {
-    id: "9",
-    title: "The Alchemist",
-    author: "Paulo Coelho",
-    category: "Motivation",
-    summary: "A fable about following your dreams — a shepherd's journey to find treasure and his personal legend.",
-    description: "The Alchemist follows Santiago, an Andalusian shepherd boy, on a journey to find treasure. Along the way he learns to listen to his heart, follow omens and pursue his Personal Legend. It's a story about dreams, destiny and the wisdom of the soul.",
-    keyPoints: [
-      "Follow your Personal Legend — your true destiny",
-      "Fear of suffering is worse than suffering itself",
-      "When you want something, the universe conspires to help",
-      "Treasure lies where your heart is"
-    ],
-    cover: "https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=600&q=80",
-    price: "$10.99",
-    currency: "$",
-    affiliateUrl: "https://www.amazon.com/dp/0062315005",
-    featured: false,
-    tags: ["motivation", "inspiration", "fiction"]
-  },
-  {
-    id: "10",
-    title: "Zero to One",
-    author: "Peter Thiel",
-    category: "Money",
-    summary: "Notes on startups, or how to build the future — creating something entirely new rather than copying.",
-    description: "Peter Thiel argues that true progress comes from going from 0 to 1 — creating something entirely new — rather than from 1 to n (copying). He shares insights on startups, monopolies, and building a better future.",
-    keyPoints: [
-      "Competition is for losers — build a monopoly instead",
-      "Go from 0 to 1 — create something new",
-      "Start small and monopolize",
-      "The best startups answer an important secret"
-    ],
-    cover: "https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?w=600&q=80",
-    price: "$14.99",
-    currency: "$",
-    affiliateUrl: "https://www.amazon.com/dp/0804139296",
-    featured: false,
-    tags: ["money", "startups", "business"]
-  }
+        {
+  id: "11",
+  title: "Build the Life You Want",
+  author: "Arthur C. Brooks & Oprah Winfrey",
+  category: "Motivation",
+  summary: "A practical guide to building happiness, finding direction and creating a meaningful life.",
+  description: "Build the Life You Want teaches you how to create real happiness through small, consistent actions. The book combines research-backed insights with practical exercises to help you improve your relationships, work, faith and personal growth.",
+  keyPoints: [
+    "Happiness is built through daily habits, not luck",
+    "Focus on relationships, work, faith and self-care",
+    "Small consistent actions create lasting change",
+    "Personal growth requires intentional effort",
+    "Direction matters more than speed"
+  ],
+  cover: "TEMU_IMAGE_URL_YAHAN",
+  price: "",
+  currency: "$",
+  affiliateUrl: "https://temu.to/k/enju55cxjhg",
+  featured: true,
+  tags: ["motivation", "self-help", "happiness"]
+},
+{
+  id: "12",
+  title: "The 7 Habits of Highly Effective People",
+  author: "Stephen R. Covey",
+  category: "Self-Help",
+  summary: "The 30th anniversary edition of the timeless classic on personal change and leadership.",
+  description: "The 7 Habits of Highly Effective People has sold over 40 million copies worldwide. Stephen Covey presents seven principles that move you from dependence to independence to interdependence. These habits are grounded in universal, timeless principles of character and effectiveness.",
+  keyPoints: [
+    "Be proactive — take responsibility for your life",
+    "Begin with the end in mind",
+    "Put first things first",
+    "Think win-win in all relationships",
+    "Seek first to understand, then to be understood"
+  ],
+  cover: "TEMU_IMAGE_URL_YAHAN",
+  price: "",
+  currency: "$",
+  affiliateUrl: "https://temu.to/k/ewicm5meeox",
+  featured: true,
+  tags: ["self-help", "habits", "leadership", "effectiveness"]
+},
+{
+  id: "13",
+  title: "Rewire Your Dopamine System Guide 2026",
+  author: "Brain Health Guide",
+  category: "Psychology",
+  summary: "How to rewire your brain for happiness and productivity — reset your dopamine system naturally.",
+  description: "This guide teaches you how to reset your dopamine system using science-backed methods. It covers morning routines, nourishing habits, light exposure, physical movement and deep focus techniques — all designed to help you feel happier, more focused and more productive.",
+  keyPoints: [
+    "Dopamine drives motivation and focus",
+    "Morning routines shape your entire day",
+    "Light exposure and movement reset brain chemistry",
+    "Deep focus rebuilds your attention span",
+    "Nourishing habits improve mood and productivity"
+  ],
+  cover: "TEMU_IMAGE_URL_YAHAN",
+  price: "",
+  currency: "$",
+  affiliateUrl: "https://temu.to/k/e4kzk2um5u5",
+  featured: true,
+  tags: ["psychology", "dopamine", "productivity", "brain"]
+},
+{
+  id: "14",
+  title: "Rich Dad Poor Dad Wall Art Poster",
+  author: "Robert T. Kiyosaki (Design)",
+  category: "Money",
+  summary: "Personalized financial book inspiration wall art — perfect for office and home decor.",
+  description: "A minimalist canvas wall art poster featuring the classic Rich Dad Poor Dad book cover. Perfect for investors, entrepreneurs and anyone inspired by financial freedom. Ideal gift for offices, home offices and study spaces.",
+  keyPoints: [
+    "Minimalist modern design",
+    "Perfect for office and home decor",
+    "Great gift for entrepreneurs and investors",
+    "Multiple size options available",
+    "Inspired by financial freedom principles"
+  ],
+  cover: "TEMU_IMAGE_URL_YAHAN",
+  price: "",
+  currency: "$",
+  affiliateUrl: "https://temu.to/k/edbtwn1opwl",
+  featured: false,
+  tags: ["money", "wall-art", "decor", "poster"]
+},
+{
+  id: "15",
+  title: "A Guide to AI Side Hustles and Digital Skills",
+  author: "AI Business Guide",
+  category: "Money",
+  summary: "Practical guide to AI side hustles, ChatGPT prompts and online money-making methods for beginners.",
+  description: "This guide teaches you how to use AI tools like ChatGPT to build real side income online. It covers AI applications, prompt writing, content creation, freelancing and productivity systems. Perfect for beginners who want to turn AI skills into real income.",
+  keyPoints: [
+    "Learn practical AI tools and ChatGPT prompts",
+    "Discover online money-making methods for beginners",
+    "Build digital skills that are in demand",
+    "Use AI for content creation and productivity",
+    "Step-by-step guidance for starting an AI side hustle"
+  ],
+  cover: "TEMU_IMAGE_URL_YAHAN",
+  price: "",
+  currency: "$",
+  affiliateUrl: "https://temu.to/k/e5i8i5xma85",
+  featured: true,
+  tags: ["ai", "money", "chatgpt", "side-hustle"]
+}
+      
 ];
 
 /* ═══════════════════════════════════════════════════════════════
