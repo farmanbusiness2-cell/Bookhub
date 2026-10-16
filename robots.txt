@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /search
+
+Sitemap: https://bookhub-ashy.vercel.app/sitemap.xml
