@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Article — BOOKHUB</title>
+<meta name="description" content="Read book summaries and self-improvement insights on BOOKHUB." />
+<meta name="theme-color" content="#ffffff" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+<div class="announcement">BOOKHUB Blog — Book Summaries · Self-Improvement · Money</div>
+
+<header>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">B</span>
+      BOOKHUB
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#books">All Books</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <div class="nav-right">
+      <a href="blog.html" class="btn-outline">← All Articles</a>
+    </div>
+  </div>
+</header>
+
+<article class="article-page container" id="articleContent">
+  <!-- Article will load via JavaScript -->
+</article>
+
+<section class="container related-section">
+  <h2 class="related-title">You Might Also Like</h2>
+  <div class="articles-grid" id="relatedGrid"></div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <h2>Weekly Book Digest</h2>
+    <p>Get one handpicked book summary every week. No spam, ever.</p>
+    <form onsubmit="handleNewsletter(event)">
+      <input type="email" placeholder="you@example.com" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p id="newsletterMsg" style="display:none;"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">BOOKHUB</div>
+        <p class="footer-desc">A curated book discovery platform.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Browse</h4>
+        <ul>
+          <li><a href="index.html">All Books</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="index.html#privacy-policy">Privacy Policy</a></li>
+          <li><a href="index.html#terms">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> BOOKHUB. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Adsterra Popunder -->
+<script data-cfasync="false" src="https://abscloud.org/1/b80e8bf779e5941a3494ea3921bbb76c"></script>
+
+<script src="articles.js"></script>
+<script src="blog.js"></script>
+
+<!-- Adsterra Second Ad -->
+<script data-cfasync="false" src="https://bauval.org/14/54c98c40e96f477657e696d41f07ff2c"></script>
+
+</body>
+</html>
