@@ -1994,7 +1994,8 @@ function trackClick(bookId, bookTitle) {
 document.getElementById('year').textContent = new Date().getFullYear();
 renderCategories();
 renderAll();
-
+renderBlogPreview();
+  
 // Close mobile menu on Escape
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeMenu();
