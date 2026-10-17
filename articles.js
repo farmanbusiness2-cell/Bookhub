@@ -215,4 +215,89 @@ const ARTICLES = [
       <p>Psychology is not just for psychologists. It's for anyone who wants to understand themselves and others better.</p>
     `
   }
+ {
+  id: "6",
+  slug: "rich-dad-poor-dad-summary-lessons",
+  title: "Rich Dad Poor Dad — Summary & 7 Key Lessons",
+  category: "Money",
+  excerpt: "The complete summary of Robert Kiyosaki's Rich Dad Poor Dad, with 7 lessons that change how you think about money.",
+  cover: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
+  author: "BOOKHUB Team",
+  date: "2026-01-26",
+  readTime: "7 min read",
+  content: `
+    <p>Rich Dad Poor Dad by Robert Kiyosaki has sold over 40 million copies worldwide. It is one of the most influential personal finance books ever written — and for good reason.</p>
+
+    <h2>The Two Dads</h2>
+    <p>Kiyosaki grew up with two father figures. His biological father (Poor Dad) was highly educated but struggled financially. His best friend's father (Rich Dad) had little formal education but became one of the richest men in Hawaii.</p>
+    <p>The book contrasts their two mindsets about money, work and life.</p>
+
+    <h2>Lesson 1: The Rich Don't Work for Money</h2>
+    <p>Poor and middle-class people work for money. Rich people make money work for them.</p>
+
+    <h2>Lesson 2: Why Financial Literacy Matters</h2>
+    <p>Kiyosaki argues that financial education is more important than a high salary. Without it, even high earners stay broke.</p>
+
+    <h2>Lesson 3: Mind Your Own Business</h2>
+    <p>Build your asset column. Buy income-generating assets — not liabilities disguised as assets.</p>
+
+    <h2>Lesson 4: The History of Taxes</h2>
+    <p>The rich understand how taxes and corporations work. The middle class pays the most taxes.</p>
+
+    <h2>Lesson 5: The Rich Invent Money</h2>
+    <p>Opportunities are everywhere. The rich train themselves to spot them.</p>
+
+    <h2>Lesson 6: Work to Learn — Not to Earn</h2>
+    <p>Choose jobs for the skills they teach you, not just the salary.</p>
+
+    <h2>Lesson 7: Overcoming Obstacles</h2>
+    <p>Fear, cynicism, laziness, bad habits and arrogance hold most people back.</p>
+
+    <h2>Final Thoughts</h2>
+    <p>Rich Dad Poor Dad is not a step-by-step investing guide. It is a mindset shift — a new way of thinking about money, work and life.</p>
+
+    <p>Explore our full book collection on the <a href="index.html#books">BOOKHUB store</a>.</p>
+  `
+},
+{
+  id: "7",
+  slug: "how-to-read-50-books-a-year",
+  title: "How to Read 50 Books a Year (Realistic Plan)",
+  category: "Productivity",
+  excerpt: "A realistic and practical system to read 50 books a year — even with a busy schedule.",
+  cover: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80",
+  author: "BOOKHUB Team",
+  date: "2026-01-28",
+  readTime: "5 min read",
+  content: `
+    <p>Fifty books a year sounds impossible. That is about one book per week. But with the right system, it is completely realistic — even if you work full-time.</p>
+
+    <h2>The Math</h2>
+    <p>An average book is 250 pages. Fifty books = 12,500 pages a year. That is about 34 pages a day. If you read 50 pages a day, you finish 50+ books a year easily.</p>
+
+    <h2>Rule 1: Read Multiple Books at Once</h2>
+    <p>Have 3-4 books going at the same time — one for morning, one for commute, one for evening. Match the book to your mood.</p>
+
+    <h2>Rule 2: Use Audiobooks</h2>
+    <p>Audiobooks count. Listen while driving, walking, cooking or at the gym. You can add 10-15 books a year just from audiobooks.</p>
+
+    <h2>Rule 3: Read Before Bed</h2>
+    <p>Replace 30 minutes of phone scrolling with 30 minutes of reading. That alone adds 15-20 books a year.</p>
+
+    <h2>Rule 4: Quit Books You Don't Enjoy</h2>
+    <p>Life is too short for bad books. If a book hasn't grabbed you by page 50, move on.</p>
+
+    <h2>Rule 5: Keep a Reading List</h2>
+    <p>Always have 5-10 books queued up. Never waste time deciding what to read next.</p>
+
+    <h2>Rule 6: Read Shorter Books</h2>
+    <p>Not every book needs to be 500 pages. Mix short books with long ones.</p>
+
+    <h2>Rule 7: Track Your Progress</h2>
+    <p>Use Goodreads or a simple notebook. Tracking keeps you motivated.</p>
+
+    <h2>Final Thoughts</h2>
+    <p>Reading 50 books a year is not about speed. It is about consistency. 30 minutes a day = 15-20 books a year. Add audiobooks and weekends — you hit 50 easily.</p>
+  `
+},
 ];
