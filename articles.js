@@ -300,4 +300,42 @@ const ARTICLES = [
     <p>Reading 50 books a year is not about speed. It is about consistency. 30 minutes a day = 15-20 books a year. Add audiobooks and weekends — you hit 50 easily.</p>
   `
 },
+ {
+    id: "8",
+    slug: "the-7-habits-of-highly-effective-people-summary",
+    title: "The 7 Habits of Highly Effective People — Summary",
+    category: "Self-Help",
+    excerpt: "A complete summary of Stephen Covey's classic book on personal and professional effectiveness.",
+    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&q=80",
+    author: "BOOKHUB Team",
+    date: "2026-02-01",
+    readTime: "6 min read",
+    content: `
+      <p>Stephen Covey's "The 7 Habits of Highly Effective People" has sold over 40 million copies. It is a principle-centered approach to solving personal and professional problems.</p>
+
+      <h2>Habit 1: Be Proactive</h2>
+      <p>Take responsibility for your life. Do not blame circumstances or conditions for your behavior. You have the freedom to choose your response.</p>
+
+      <h2>Habit 2: Begin with the End in Mind</h2>
+      <p>Define your vision and goals clearly. Imagine your own funeral and what you want people to say about you — then live your life backwards from that vision.</p>
+
+      <h2>Habit 3: Put First Things First</h2>
+      <p>Prioritize what is truly important, not just what is urgent. Focus on high-impact activities that align with your long-term vision.</p>
+
+      <h2>Habit 4: Think Win-Win</h2>
+      <p>Seek mutually beneficial solutions in all interactions. Life is not a zero-sum game — everyone can win.</p>
+
+      <h2>Habit 5: Seek First to Understand, Then to Be Understood</h2>
+      <p>Listen empathetically before trying to make your own point. Most people listen with the intent to reply, not to understand.</p>
+
+      <h2>Habit 6: Synergize</h2>
+      <p>Collaborate creatively with others. The whole is greater than the sum of its parts when people work together effectively.</p>
+
+      <h2>Habit 7: Sharpen the Saw</h2>
+      <p>Continuously renew yourself in four dimensions: physical, social/emotional, mental, and spiritual. Self-renewal is essential for long-term effectiveness.</p>
+
+      <h2>Final Thoughts</h2>
+      <p>These habits move you from dependence to independence, and finally to interdependence. Master them to become truly effective in life and work.</p>
+    `
+},
 ];
