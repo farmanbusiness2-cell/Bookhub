@@ -214,7 +214,7 @@ const ARTICLES = [
       <h2>Final Thoughts</h2>
       <p>Psychology is not just for psychologists. It's for anyone who wants to understand themselves and others better.</p>
     `
-  }
+  },
  {
   id: "6",
   slug: "rich-dad-poor-dad-summary-lessons",
