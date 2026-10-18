@@ -338,4 +338,98 @@ const ARTICLES = [
       <p>These habits move you from dependence to independence, and finally to interdependence. Master them to become truly effective in life and work.</p>
     `
 },
-];
+{
+  id: "9",
+  slug: "the-psychology-of-money-summary",
+  title: "The Psychology of Money — Summary & Key Lessons",
+  category: "Money",
+  excerpt: "Timeless lessons on wealth, greed, and happiness. Discover why doing well with money has little to do with how smart you are.",
+  cover: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+  author: "BOOKHUB Team",
+  date: "2026-02-05",
+  readTime: "6 min read",
+  content: `
+    <p>In "The Psychology of Money," Morgan Housel argues that doing well with money isn't necessarily about what you know. It's about how you behave. And behavior is hard to teach, even to really smart people.</p>
+
+    <h2>1. No One is Crazy</h2>
+    <p>People's views on money are heavily influenced by their personal experiences and the generation they grew up in. What seems crazy to you might make perfect sense to someone else based on their financial history.</p>
+
+    <h2>2. Luck & Risk Are Siblings</h2>
+    <p>Nothing is as good or as bad as it seems. Every outcome in life is guided by forces other than individual effort. Be careful when judging financial success or failure.</p>
+
+    <h2>3. Never Enough</h2>
+    <p>The hardest financial skill is getting the goalpost to stop moving. If expectations rise with results, there is no logic in striving for more because you'll feel the same after putting in the effort.</p>
+
+    <h2>4. Confounding Compounding</h2>
+    <p>Warren Buffett's fortune is a result of time, not just high returns. If he had started investing at 30 and retired at 60, his net worth would be vastly smaller. Compounding is magic.</p>
+
+    <h2>5. Getting Wealthy vs. Staying Wealthy</h2>
+    <p>Getting money requires taking risks and being optimistic. Keeping money requires the exact opposite: humility and fear that what you've made can be taken away just as fast.</p>
+
+    <h2>Final Thoughts</h2>
+    <p>Wealth is just what you don't see. It's the cars not purchased, the watches not bought. Building wealth requires patience, a long-term mindset, and emotional control over your spending habits.</p>
+  `
+},
+{
+  id: "10",
+  slug: "how-to-stop-procrastinating",
+  title: "How to Stop Procrastinating and Get Things Done",
+  category: "Productivity",
+  excerpt: "Procrastination is not a time management problem; it's an emotional regulation problem. Here is how to beat it.",
+  cover: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+  author: "BOOKHUB Team",
+  date: "2026-02-10",
+  readTime: "5 min read",
+  content: `
+    <p>We all procrastinate. But why do we do it? Most people think it's because they are lazy or bad at managing their time. Science says otherwise.</p>
+    <p>Procrastination is actually an emotional coping mechanism. We avoid tasks because they make us feel anxious, bored, or overwhelmed.</p>
+
+    <h2>1. The 2-Minute Rule</h2>
+    <p>If a task takes less than two minutes to complete, do it immediately. This simple rule prevents small tasks from piling up and becoming overwhelming.</p>
+
+    <h2>2. Break It Down</h2>
+    <p>We procrastinate because the task feels too big. Instead of saying "I need to write a book," say "I need to write 200 words." Make the first step so easy you can't say no.</p>
+
+    <h2>3. Forgive Yourself</h2>
+    <p>Research shows that students who forgave themselves for procrastinating on the first exam procrastinated less on the next one. Self-compassion reduces the guilt that fuels the procrastination cycle.</p>
+
+    <h2>4. Remove Distractions</h2>
+    <p>Willpower is a limited resource. Don't rely on it. Put your phone in another room, close unnecessary browser tabs, and create an environment that makes focus the only option.</p>
+
+    <h2>Final Thoughts</h2>
+    <p>Action creates motivation, not the other way around. Stop waiting to "feel like it." Just start small, and the momentum will carry you forward.</p>
+  `
+},
+{
+  id: "11",
+  slug: "why-you-should-read-every-day",
+  title: "5 Life-Changing Benefits of Reading Every Day",
+  category: "Self-Help",
+  excerpt: "Reading is to the mind what exercise is to the body. Discover how just 20 minutes a day can transform your life.",
+  cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80",
+  author: "BOOKHUB Team",
+  date: "2026-02-15",
+  readTime: "5 min read",
+  content: `
+    <p>In a world dominated by short-form videos and endless scrolling, the ability to sit down and read a book is becoming a superpower. Here are five reasons why you should build a daily reading habit.</p>
+
+    <h2>1. Stress Reduction</h2>
+    <p>Reading can reduce stress levels by up to 68%. A good novel can transport you to another world, allowing you to escape the anxieties of daily life.</p>
+
+    <h2>2. Mental Stimulation</h2>
+    <p>Just like muscles, your brain needs exercise to stay healthy. Reading keeps your brain active and engaged, which can help prevent cognitive decline as you age.</p>
+
+    <h2>3. Improved Empathy</h2>
+    <p>Studies show that people who read literary fiction have a better ability to understand the feelings and thoughts of others. Books allow you to walk in someone else's shoes.</p>
+
+    <h2>4. Better Vocabulary</h2>
+    <p>The more you read, the more words you gain exposure to. This inevitably makes its way into your everyday vocabulary, making you a more effective communicator.</p>
+
+    <h2>5. It's a Form of Investment</h2>
+    <p>For the price of a cup of coffee, you can download a book that contains 10 years of someone else's research, failures, and successes. It's the highest return on investment you can make.</p>
+
+    <h2>Final Thoughts</h2>
+    <p>You don't need to read 100 books a year. Start with just 10 pages a day. That's 3,650 pages a year—about 12 books. Your future self will thank you.</p>
+  `
+}
+]; 
